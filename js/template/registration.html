@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="crumb">
+        <span>Sign up</span>
+        <span>Activate</span>
+        <span>Go!</span>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="well">
+        <form role="form">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" data-ng-model="firstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" data-ng-model="lastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" data-ng-model="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="number" class="form-control" id="phone" data-ng-model="phone" placeholder="Phone">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" data-ng-model="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="passwordVerify">Password Verification</label>
+                <input type="password" class="form-control" id="passwordVerify" data-ng-model="passwordVerify" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default" data-ng-click="registerAccount()">Submit</button>
+        </form>
+    </div>
+</div>
