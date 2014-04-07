@@ -7,11 +7,11 @@ PigE.config(function ($routeProvider, $locationProvider) {
             .html5Mode(true).hashPrefix('!');
         $routeProvider
             .when('/register', {
-                templateUrl: 'js/template/registration.html',
+                templateUrl: '/js/template/registration.html',
                 controller: 'registrationController'
             })
-            .when('/dealer/palindrome', {
-                templateUrl: '/dealer/template/palindrome.html',
-                controller: 'PalindromeController'
+            .when('/register/setup', {
+                templateUrl: '/js/template/registration-setup.html',
+                controller: 'registrationController'
             });
 });

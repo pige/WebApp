@@ -34,6 +34,7 @@
                 <input type="password" class="form-control" id="passwordVerify" data-ng-model="passwordVerify" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-default" data-ng-click="registerAccount()">Submit</button>
+            <span data-ng-show="showError" style="color: indianred">{{errorMsg}}</span>
         </form>
     </div>
 </div>

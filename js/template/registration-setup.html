@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="well">
+        <span>Select your role!</span><br><br>
+        <button class="btn btn-info" data-ng-class="{'active': getActive}" data-ng-click="selectType('get')">Get Change</button>
+        <button class="btn btn-info" data-ng-class="{'active': makeActive}" data-ng-click="selectType('make')">Make Change</button>
+        <button class="btn btn-info" data-ng-class="{'active': winActive}" data-ng-click="selectType('win')">Win Change</button>
+        <br><br>
+        <button type="submit" class="btn btn-default" data-ng-click="submitAccount()">Submit</button>
+        <span data-ng-show="showError" style="color: indianred">{{errorMsg}}</span>
+    </div>
+</div>

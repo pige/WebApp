@@ -27,8 +27,10 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/register', routes.index);
+app.get('/register/setup', routes.index);
 app.get('/js/webapp.js', routes.webapp);
 app.get('/js/template/registration.html', routes.registration);
+app.get('/js/template/registration-setup.html', routes.registrationSetup);
 app.get('/js/services/APIService.js', routes.apiservice);
 app.get('/js/controller/RegistrationController.js', routes.registrationController);
 

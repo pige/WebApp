@@ -18,6 +18,10 @@ module.exports = {
         res.sendfile('js/template/registration.html');
     },
 
+    registrationSetup: function(req, res){
+        res.sendfile('js/template/registration-setup.html');
+    },
+
     apiservice: function(req, res){
         res.sendfile('js/services/APIService.js');
     },

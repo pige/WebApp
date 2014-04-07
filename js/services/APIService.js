@@ -27,10 +27,14 @@ PigE.factory('APIService', function($http,
 
         return {
             registerUser: function(data){
+                var defer = $q.defer();
                 var promise = sendPost('/api/registerUser', data);
+
                 promise.then(function(data){
-                    console.log(data);
-                })
+                    defer.resolve(data);
+                });
+
+                return defer.promise;
             }
         };
 });
