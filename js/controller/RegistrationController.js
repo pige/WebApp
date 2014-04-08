@@ -34,7 +34,7 @@ PigE.controller('registrationController', function($scope, $location, APIService
 //            $location.path('/register/accountinfo');
 //        });
         if(accountType === 'get' || accountType === 'win'){
-            $location.path('/register/accountinfo');
+            $location.path('/register/account');
         } else if (accountType === 'make'){
             $location.path('/register/organization');
         }

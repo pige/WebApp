@@ -13,5 +13,13 @@ PigE.config(function ($routeProvider, $locationProvider) {
             .when('/register/setup', {
                 templateUrl: '/js/template/registration-setup.html',
                 controller: 'registrationController'
+            })
+            .when('/register/organization', {
+                templateUrl: '/js/template/registration-orgs.html',
+                controller: 'registrationController'
+            })
+            .when('/register/account', {
+                templateUrl: '/js/template/registration-account.html',
+                controller: 'registrationController'
             });
 });

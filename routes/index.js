@@ -22,6 +22,10 @@ module.exports = {
         res.sendfile('js/template/registration-setup.html');
     },
 
+    registrationAccount: function(req, res){
+        res.sendfile('js/template/registration-account.html');
+    },
+
     apiservice: function(req, res){
         res.sendfile('js/services/APIService.js');
     },
