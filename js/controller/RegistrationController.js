@@ -46,7 +46,7 @@ PigE.controller('registrationController', function($scope, $location, APIService
 
     $scope.registerAccount = function(){
         if($scope.firstName === undefined || $scope.lastName === undefined || $scope.email=== undefined
-            || $scope.phone === undefined || $scope. password === undefined){
+            || $scope.phone === undefined || $scope.password === undefined){
             formError("Please complete the form before proceeding");
         } else if ($scope.passwordVerify !== $scope.password){
             formError("Passwords do not match");
@@ -64,6 +64,26 @@ PigE.controller('registrationController', function($scope, $location, APIService
             $location.path('/register/setup');
             accountId = data.accountId;
             localStorage.setItem("accountId", data.accountId);
+        });
+    };
+    
+    $scope.registerCC = function() {
+        if($scope.ccName === undefined || $scope.ccNumber === undefined || $scope.ccExpMonth === undefined
+            || $scope.ccExpYear === undefined || $scope.ccCVV === undefined) {
+            formError("Please complete the form before proceeding");
+        }
+        
+        var data = {
+            'ccName': $scope.ccName,
+            'ccNumber': $scope.ccNumber,
+            'ccExpMonth': $scope.ccExpMonth,
+            'ccExpYear': $scope.ccExpYear,
+            'ccCVV': $scope.ccCVV
+        };
+        
+        APIService.registerCreditCard(data).then(function(data) {
+            $location.path('/register/setup');
+            localStorage.setItem("ccNumber", data.ccNumber);
         });
     };
 

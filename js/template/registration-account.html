@@ -5,12 +5,13 @@
                 <div id="legend">
                     <legend class="">Payment</legend>
                 </div>
+<!-- TODO: change to bank info page; refer to registration.html to send to server, and response -->
 
                 <!-- Name -->
                 <div class="control-group">
                     <label class="control-label"  for="username">Card Holder's Name</label>
                     <div class="controls">
-                        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+                        <input type="text" id="username" name="username" data-ng-model="ccName" placeholder="" class="input-xlarge">
                     </div>
                 </div>
 
@@ -18,7 +19,7 @@
                 <div class="control-group">
                     <label class="control-label" for="email">Card Number</label>
                     <div class="controls">
-                        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                        <input type="text" id="email" name="email" data-ng-model="ccNumber" placeholder="" class="input-xlarge">
                     </div>
                 </div>
 
@@ -26,7 +27,7 @@
                 <div class="control-group">
                     <label class="control-label">Card Expiry Date</label>
                     <div class="controls">
-                        <select class="span3" name="expiry_month" id="expiry_month">
+                        <select class="span3" name="expiry_month" id="expiry_month" data-ng-model="ccExpMonth">
                             <option></option>
                             <option value="01">Jan (01)</option>
                             <option value="02">Feb (02)</option>
@@ -37,11 +38,11 @@
                             <option value="07">July (07)</option>
                             <option value="08">Aug (08)</option>
                             <option value="09">Sep (09)</option>
-                            <option value="10">Oct (10)</option>1
+                            <option value="10">Oct (10)</option>
                             <option value="11">Nov (11)</option>
                             <option value="12">Dec (12)</option>
                         </select>
-                        <select class="span2" name="expiry_year">
+                        <select class="span2" name="expiry_year" data-ng-model="ccExpYear">
                             <option value="13">2013</option>
                             <option value="14">2014</option>
                             <option value="15">2015</option>
@@ -61,17 +62,18 @@
                 <div class="control-group">
                     <label class="control-label"  for="password_confirm">Card CVV</label>
                     <div class="controls">
-                        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="span2">
+                        <input type="password" id="password_confirm" name="password_confirm" data-ng-model="ccCVV" placeholder="" class="span2">
                     </div>
                 </div><br><br>
 
                 <!-- Submit -->
                 <div class="control-group">
                     <div class="controls">
-                        <button class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success" data-ng-click="registerCC()">Submit</button>
                     </div>
                 </div>
-
+                <span data-ng-show="showError" style="color: indianred">{{errorMsg}}</span>
+                            
             </fieldset>
         </form>
     </div>
