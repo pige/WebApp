@@ -69,26 +69,6 @@ PigE.controller('registrationController', function($scope, $location, APIService
         });
     };
     
-    $scope.registerCC = function() {
-        if($scope.ccName === undefined || $scope.ccNumber === undefined || $scope.ccExpMonth === undefined
-            || $scope.ccExpYear === undefined || $scope.ccCVV === undefined) {
-            formError("Please complete the form before proceeding");
-        }
-        
-        var data = {
-            'ccName': $scope.ccName,
-            'ccNumber': $scope.ccNumber,
-            'ccExpMonth': $scope.ccExpMonth,
-            'ccExpYear': $scope.ccExpYear,
-            'ccCVV': $scope.ccCVV
-        };
-        
-        APIService.registerCreditCard(data).then(function(data) {
-            $location.path('/register/setup');
-            localStorage.setItem("ccNumber", data.ccNumber);
-        });
-    };
-
     function formError(msg){
         $scope.errorMsg = msg;
         $scope.showError = true;
