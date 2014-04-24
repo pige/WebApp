@@ -36,5 +36,16 @@ PigE.factory('APIService', function($http,
 
                 return defer.promise;
             }
+            
+            registerCreditCard: function(data) {
+                var defer = $q.defer();
+                var promise = sendPost('/api/registerCreditCard', data);
+                
+                promise.then(function(data) {
+                    defer.resolve(data);
+                });
+                
+                return defer.promise;
+            }
         };
 });
