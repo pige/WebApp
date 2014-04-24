@@ -46,10 +46,12 @@ PigE.controller('registrationController', function($scope, $location, APIService
 
     $scope.registerAccount = function(){
         if($scope.firstName === undefined || $scope.lastName === undefined || $scope.email=== undefined
-            || $scope.phone === undefined || $scope. password === undefined){
+            || $scope.phone === undefined || $scope.password === undefined){
             formError("Please complete the form before proceeding");
+            return;
         } else if ($scope.passwordVerify !== $scope.password){
             formError("Passwords do not match");
+            return;
         }
 
         var data = {
