@@ -2,44 +2,58 @@
     <div class="row-fluid">
         <form class="form-horizontal">
             <fieldset>
-                <div id="legend">
-                    <legend class="">Payment</legend>
-                </div>
-<!-- TODO: change to bank info page; refer to registration.html to send to server, and response -->
 
-                <!-- Name -->
-                <div class="control-group">
-                    <label class="control-label"  for="username">Name</label>
-                    <div class="controls">
-                        <input type="text" id="accountName" name="accountName" data-ng-model="accountName" placeholder="" class="input-xlarge">
-                    </div>
-                </div>
+            <legend>Register Account</legend>
 
-                <!-- Routing Number -->
-                <div class="control-group">
-                    <label class="control-label" for="routingNumber">Routing Number</label>
-                    <div class="controls">
-                        <input type="text" id="routingNumber" name="routingNumber" data-ng-model="routingNumber" placeholder="" class="input-xlarge">
-                    </div>
-                </div>
-				
-				<!-- Account Number -->
-                <div class="control-group">
-                    <label class="control-label" for="accountNumber">Account Number</label>
-                    <div class="controls">
-                        <input type="text" id="accountNumber" name="accountNumber" data-ng-model="accountNumber" placeholder="" class="input-xlarge">
-                    </div>
-                </div>
+            <div class="control-group">
+              <label class="control-label" for="accountName">Account Name</label>
+              <div class="controls">
+                <input id="accountName" name="accountName" data-ng-model="accountName" type="text" placeholder="" class="input-xlarge" required="">
+                
+              </div>
+            </div>
 
-                <!-- Submit -->
-                <div class="control-group">
-                    <div class="controls">
-                        <button type="submit" class="btn btn-success" data-ng-click="registerBankAccount()">Submit</button>
-                    </div>
-                </div>
-                <span data-ng-show="showError" style="color: indianred">{{errorMsg}}</span>
-                            
+            <div class="control-group">
+              <label class="control-label" for="routingNumber">Routing Number</label>
+              <div class="controls">
+                <input id="routingNumber" name="routingNumber" data-ng-model="routingNumber" type="text" placeholder="" class="input-xlarge" required="">
+                
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="accountNumber">Account Number</label>
+              <div class="controls">
+                <input id="accountNumber" name="accountNumber" data-ng-model="accountNumber" type="text" placeholder="" class="input-xlarge" required="">
+                
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="accountType">Account Type</label>
+              <div class="controls">
+                <label class="radio" for="accountType-0">
+                  <input type="radio" name="accountType" id="accountType-0" data-ng-model="accountType" value="Checking" checked="checked" required="required">
+                  Checking
+                </label>
+                <label class="radio" for="accountType-1">
+                  <input type="radio" name="accountType" id="accountType-1" data-ng-model="accountType" value="Savings" required="required">
+                  Savings
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="submit"></label>
+              <div class="controls">
+                <button id="submit" name="submit" class="btn btn-success" data-ng-click="registerBankAccount()">Submit</button>
+              </div>
+            </div>
+
+            <span data-ng-show="showError" style="color: indianred">{{errorMsg}}</span>
+
             </fieldset>
         </form>
+
     </div>
 </div>
