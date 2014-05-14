@@ -68,6 +68,10 @@ PigE.controller('registrationController', function($scope, $location, APIService
             localStorage.setItem("accountId", data.accountId);
         });
     };
+
+    $scope.registerBankAccount = function () {
+        // todo: send bank info 
+    };
     
     function formError(msg){
         $scope.errorMsg = msg;
